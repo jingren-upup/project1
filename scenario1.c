@@ -15,7 +15,11 @@ void scenario1Once(float *pElevTime, float *pAvgPasTime)
     int numPass = 0;
     int destination[20];
     generate(&numPass, destination);
+//    printf("time to complete the elevator run: %d\n", numPass);
     calculateTime(numPass, destination, pElevTime, pAvgPasTime);
+
+//    printf("time to complete the elevator run: %d\n", pElevTime);
+//    printf("average time per passenger: %d\n", *pAvgPasTime);
 
 }
 
@@ -23,25 +27,29 @@ void scenario1Once(float *pElevTime, float *pAvgPasTime)
 void scenario1()
 {
     //original data for once
-    float eletime= 0, Ave_PasTime = 0;
-    float minTimeElev = INT_MAX; //minimum total time
-    float maxTimeElev = 0;       //maximum total time
+    float eletime= 0;
+    float Ave_PasTime = 0;
+    //minimum total time
+    int minTimeElev = INT_MAX;
+    //maximum total time
+    int maxTimeElev = 0;
     //final result
     float avgElevTime = 0, avgPasTime_1000 = 0;
-//    int allTimeElev = 0;       //all total time
-//    double allAvgPasTime = 0;  //all average passenger time
     // calculate 1000 times
     for(int i = 0; i < 1000; ++i){
         scenario1Once(&eletime, &Ave_PasTime);
-        if (minTimeElev > eletime){
+        if (minTimeElev > eletime && eletime != 0){
             minTimeElev = eletime;
+
+
         }
         if (eletime > maxTimeElev){
             maxTimeElev = eletime;
         }
 
-        avgElevTime += avgElevTime;
+        avgElevTime += eletime;
         avgPasTime_1000 += Ave_PasTime;
+
     }
 
     avgElevTime = avgElevTime/1000;

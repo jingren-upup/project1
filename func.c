@@ -32,20 +32,26 @@ void generate(int *pNumPassenger, int destination[])
 // calculate the elevator running time
 // and input should be passenger number, an array of destination floors and the empty elevator running time and the empty
 // and output should return the  pointer to elevator run time, pointer to average passenger time
-void calculateTime(int numPassenger, int destination[], float *pElevTime, float *pAvgPasTime)
-{   // judge if the passenger number is 0 or null
-    if(numPassenger == 0 || numPassenger == NULL)
+void calculateTime(int numPassenger, int destination[], float *ElevTime, float *AvgPasTime)
+{
+    // judge if the passenger number is 0 or null
+    if(numPassenger == 0)
     {
-        *pAvgPasTime = 0;
-        *pElevTime = 0;
+        *AvgPasTime = 0;
+        *ElevTime = 0;
         return;
     }
 
-    float elevTime = destination[numPassenger - 1] * movePerFloorTime; // elevator's running time
-    float *timeIdv = (float *)malloc(numPassenger * sizeof(float));        // individual passenger's time cost
-    timeIdv[0] = destination[0] * movePerFloorTime;                  // time cost of the fisrt passenger to leave
-    int timesStopped = 1;                                            // num of times that the elevator stopped
-    float avgPasTime = 0;                                              // average passenger time cost
+    // elevator's running time
+    float elevTime = destination[numPassenger - 1] * movePerFloorTime;
+    // per passenger's time cost
+    float *timeIdv = (float *)malloc(numPassenger * sizeof(float));
+    // time cost of the fisrt passenger to leave
+    timeIdv[0] = destination[0] * movePerFloorTime;
+    // num of times that the elevator stopped
+    int timesStopped = 1;
+    // average passenger time cost
+    float avgPasTime = 0;
 
     for (int i = 1; i < numPassenger; i++)
     {
@@ -60,14 +66,17 @@ void calculateTime(int numPassenger, int destination[], float *pElevTime, float 
             // multiple people arriving at the same floor
             timeIdv[i] = timeIdv[i - 1];
         }
+        // add the value of ind
         avgPasTime += timeIdv[i];
     }
 
-    elevTime += (timesStopped - 1) * stopTime; // total elev time
-    avgPasTime = avgPasTime / numPassenger;    // final average passenger time
-
-    *pAvgPasTime = avgPasTime;
-    *pElevTime = elevTime;
-
+    // total elev time
+    elevTime += (timesStopped - 1) * stopTime;
+    // final average passenger time
+    avgPasTime = avgPasTime / numPassenger;
+    //store the result
+    *AvgPasTime = avgPasTime;
+    *ElevTime = elevTime;
+    //release the time idv
     free(timeIdv);
 }
