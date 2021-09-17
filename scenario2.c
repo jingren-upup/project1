@@ -83,7 +83,6 @@ void scenario2(){
 
         avgElevTime += eletime;
         avgPasTime_1000 = avgPasTime_1000 + Ave_PasTime;
-        printf("the average time per passenger after iterations: %.4f\n", avgPasTime_1000);
 
     }
 
