@@ -15,11 +15,9 @@ void scenario1Once(float *pElevTime, float *pAvgPasTime)
     int numPass = 0;
     int destination[20];
     generate(&numPass, destination);
-//    printf("time to complete the elevator run: %d\n", numPass);
     calculateTime(numPass, destination, pElevTime, pAvgPasTime);
 
-//    printf("time to complete the elevator run: %d\n", pElevTime);
-//    printf("average time per passenger: %d\n", *pAvgPasTime);
+
 
 }
 
