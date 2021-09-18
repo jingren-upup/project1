@@ -11,4 +11,4 @@ add_executable(
         scenario.h
         scenario1.c
         scenario2.c
-        func.c func.h scenario3.c)
+        func.c func.h scenario3.c scenario4.c)

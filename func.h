@@ -1,3 +1,7 @@
+#ifndef _FUNC_H_
+#define _FUNC_H_
+
+#pragma once
 //
 // Created by jinreng wang on 9/16/21.
 #define  capacity  18;        //Maximum number of people a single elevator can fit
@@ -10,3 +14,5 @@ void  calculateTime(int numPassenger, int destination[], float *ElevTime, float 
 void generate(int *pNumPassenger, int destination[]);
 int cmpfunc(const void *a, const void *b);
 void generate2(int *pNumPassenger, int destination[]);
+
+#endif
