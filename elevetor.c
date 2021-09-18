@@ -4,10 +4,10 @@
 
 void main()
 {
-//   scenario1();
-//    scenario2();
-//    findS3MaxFloor();
-     findS4MaxFloor();
+    scenario1();
+    scenario2();
+    findS3MaxFloor();
+    findS4MaxFloor();
 
 }
 
