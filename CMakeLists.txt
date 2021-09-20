@@ -7,7 +7,7 @@ include_directories(.)
 
 add_executable(
         example
-        elevetor.c
+        elevator.c
         scenario.h
         scenario1.c
         scenario2.c

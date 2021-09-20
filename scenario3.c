@@ -16,7 +16,7 @@ int count3 = 0, count4 = 0;
 
 
 // for one cycle elevators
-void scenario3Once(float *pElevTime, float *pAvgPasTime,int maxFloor1) {
+void scenario3Once(float *perEleTime, float *perAvgPassTime, int maxFloor1) {
     //total capacity 1-18
     int numPass = 0;
     int destination[18];
@@ -46,13 +46,13 @@ void scenario3Once(float *pElevTime, float *pAvgPasTime,int maxFloor1) {
     calculateTime(count4, elev2, &elevTime2, &avgPasTime2);
     //get max value
     if (elevTime1>elevTime2){
-        *pElevTime = elevTime1;
+        *perEleTime = elevTime1;
     }else{
-        *pElevTime = elevTime2;
+        *perEleTime = elevTime2;
     }
-    *pAvgPasTime = (avgPasTime1*count3+avgPasTime2*count4) / numPass;
-    if (*pElevTime<3){
-        *pElevTime = 3;
+    *perAvgPassTime = (avgPasTime1 * count3 + avgPasTime2 * count4) / numPass;
+    if (*perEleTime < 3){
+        *perEleTime = 3;
     }
 }
 

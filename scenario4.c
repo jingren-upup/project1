@@ -16,7 +16,7 @@ int count5 = 0, count6 = 0,count7 = 0;
 
 
 // for one cycle elevators
-void scenario4Once(float *pElevTime, float *pAvgPasTime,int maxFloor1,int maxFloor2) {
+void scenario4Once(float *perEleTime, float *perAvgPassTime, int maxFloor1, int maxFloor2) {
     //total capacity 1-18
     int numPass = 0;
     int destination[18];
@@ -54,14 +54,14 @@ void scenario4Once(float *pElevTime, float *pAvgPasTime,int maxFloor1,int maxFlo
         temp = elevTime2;
     }
     if (temp>elevTime3){
-        *pElevTime = temp;
+        *perEleTime = temp;
     }else{
-        *pElevTime = elevTime3;
+        *perEleTime = elevTime3;
     }
 
-    *pAvgPasTime = (avgPasTime1*count5+avgPasTime2*count6+avgPasTime3*count7) / numPass;
-    if (*pElevTime<3){
-        *pElevTime = 3;
+    *perAvgPassTime = (avgPasTime1 * count5 + avgPasTime2 * count6 + avgPasTime3 * count7) / numPass;
+    if (*perEleTime < 3){
+        *perEleTime = 3;
     }
 }
 
@@ -133,7 +133,7 @@ void findS4MaxFloor(){
         }
     }
     printf("\nScenario4:\n");
-    printf("for the optimized total elevator time, the maxFloor1 is:%d\nthe maxFloor2 is:%d\n,and the total elevator time is: %3f\n", optFloor1,optFloor2,OptelevatorTime);
+    printf("for the optimized total elevator time, the maxFloor1 is:%d\nthe maxFloor2 is:%d\nand the total elevator time is: %3f\n", optFloor1,optFloor2,OptelevatorTime);
     printf("for the optimized max elevator time, the maxFloor1 is:%d\nthe maxFloor2 is:%d\nand the max elevator time is: %3f\n", optMaxFloor1,optMaxFloor2,MaxElevatorTime1);
     printf("for the optimized average passenger elevator time, optimized maxFloor1 is:%d\noptimized maxFloor2 is:%d\nand the average passenger time is: %3f\n", avgFloor1,avgFloor2 ,OptpassengerTime);
 

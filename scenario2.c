@@ -15,7 +15,7 @@ int elev1[18], elev2[18];
 // passenger of two elevators
 int count1 = 0, count2 = 0;
 
-void scenario2Once(float *pElevTime, float *pAvgPasTime){
+void scenario2Once(float *perEleTime, float *perAvgPassTime){
     //total capacity 1-18
      int numPass = 0;
      int destination[18];
@@ -45,13 +45,13 @@ void scenario2Once(float *pElevTime, float *pAvgPasTime){
     calculateTime(count2, elev2, &elevTime2, &avgPasTime2);
     //get max value
     if (elevTime1>elevTime2){
-        *pElevTime = elevTime1;
+        *perEleTime = elevTime1;
     }else{
-        *pElevTime = elevTime2;
+        *perEleTime = elevTime2;
     }
-    *pAvgPasTime = (avgPasTime1*count1+avgPasTime2*count2) / numPass;
-    if (*pElevTime<3){
-        *pElevTime = 3;
+    *perAvgPassTime = (avgPasTime1 * count1 + avgPasTime2 * count2) / numPass;
+    if (*perEleTime < 3){
+        *perEleTime = 3;
     }
 
 

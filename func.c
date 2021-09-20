@@ -34,23 +34,7 @@ void generate(int *pNumPassenger, int destination[])
     // store the value and give out
     *pNumPassenger = numPassenger;
 }
-// generate 2 elevators'people
-void generate2(int *pNumPassenger, int destination[])
-{
-    int numPassenger = rand() % capacity2 + 1; // 1-36
 
-    // generate destination floor for all passengers
-    for (int i = 0; i < numPassenger; i++)
-    {
-        destination[i] = rand() % floors + 1; // 1-20
-    }
-
-    // sorting destinations
-    qsort(destination, numPassenger, sizeof(int), cmpfunc);
-
-    // store the value and give out
-    *pNumPassenger = numPassenger;
-}
 
 // calculate the elevator running time
 // and input should be passenger number, an array of destination floors

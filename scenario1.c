@@ -10,12 +10,12 @@
 
 
 //for one time scenario
-void scenario1Once(float *pElevTime, float *pAvgPasTime)
+void scenario1Once(float *perEleTime, float *perAvgPassTime)
 {
     int numPass = 0;
     int destination[20];
     generate(&numPass, destination);
-    calculateTime(numPass, destination, pElevTime, pAvgPasTime);
+    calculateTime(numPass, destination, perEleTime, perAvgPassTime);
 
 
 
