@@ -132,6 +132,7 @@ void findS4MaxFloor(){
             }
         }
     }
+    printf("\nScenario4:\n");
     printf("for the optimized total elevator time, the maxFloor1 is:%d\nthe maxFloor2 is:%d\n,and the total elevator time is: %3f\n", optFloor1,optFloor2,OptelevatorTime);
     printf("for the optimized max elevator time, the maxFloor1 is:%d\nthe maxFloor2 is:%d\nand the max elevator time is: %3f\n", optMaxFloor1,optMaxFloor2,MaxElevatorTime1);
     printf("for the optimized average passenger elevator time, optimized maxFloor1 is:%d\noptimized maxFloor2 is:%d\nand the average passenger time is: %3f\n", avgFloor1,avgFloor2 ,OptpassengerTime);

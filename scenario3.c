@@ -118,6 +118,7 @@ void findS3MaxFloor(){
             optMaxFloor = floor1;
         }
     }
+    printf("\nScenario3:\n");
     printf("for the optimized total elevator time, the maxFloor1 is:%d\nand the total elevator time is: %3f\n", optFloor, OptelevatorTime);
     printf("for the optimized max elevator time, the maxFloor1 is:%d\nand the max elevator time is: %3f\n", optMaxFloor, MaxElevatorTime);
     printf("for the optimized average passenger elevator time, optimized maxFloor1 is:%d\nand the average passenger time is: %3f\n", avgFloor, OptpassengerTime);

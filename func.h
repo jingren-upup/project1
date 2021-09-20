@@ -13,6 +13,6 @@
 void  calculateTime(int numPassenger, int destination[], float *ElevTime, float *AvgPasTime);
 void generate(int *pNumPassenger, int destination[]);
 int cmpfunc(const void *a, const void *b);
-void generate2(int *pNumPassenger, int destination[]);
+
 
 #endif

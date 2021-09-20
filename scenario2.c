@@ -88,7 +88,7 @@ void scenario2(){
 
     avgElevTime = avgElevTime/1000;
     avgPasTime_1000 = avgPasTime_1000/1000;
-
+    printf("\nScenario2:\n");
     printf("the average time  after iterations  is: %.4f\n",  avgElevTime);
     printf("the minumum time  after iterations  is: %d\n",  minTimeElev);
     printf("the maximum time after iterations is: %d\n", maxTimeElev);
